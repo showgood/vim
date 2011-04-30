@@ -1,9 +1,13 @@
 <Question> how to list all plugins and _vimrcs loaded?
 <Answer> :scriptnames
 
+<Question> how to paste the lines with right indent?
+<Answer> ]p
+
 <Question> how to reselect the last paste?
-The pair of `[ and `] marks don't always contain the last paste
-`[v`]
+<Answer> `[v`]
+<related> :h `[ :h `]
+
 <Question> how to split a buffer vertically? (sb<N> only split it horizontally)?
 <Answer> :vert sb<N>
 
