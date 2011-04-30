@@ -120,6 +120,5 @@ let g:bufExplorerShowRelativePath=1
 map <leader>o :BufExplorer<cr>
 
 map <F3> :ExpjSelectToggle<cr>
-
 nnoremap <unique> <leader>ms :ExmbToggle<CR>
 nnoremap <unique> <Leader>qf :ExqfSelectToggle<CR>
