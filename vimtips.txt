@@ -4,9 +4,25 @@
 <Question> how to paste the lines with right indent?
 <Answer> ]p
 
+<Question> how to sort within vim? (without using external sort program)
+<Answer> :sort
+<related> :h sort
+
+<Question> how to sort reversely within vim?
+<Answer> :sort!
+<related> :h sort
+
+<Question> how to sort and remove the duplication during sort?
+<Answer> :sort u
+<related> :h sort
+
 <Question> how to reselect the last paste?
 <Answer> `[v`]
 <related> :h `[ :h `]
+
+<Question> how to diff files within vim?
+<Answer> :vert splitdiff <file>
+<Note> this will split the screen vertically
 
 <Question> how to split a buffer vertically? (sb<N> only split it horizontally)?
 <Answer> :vert sb<N>
