@@ -935,7 +935,10 @@ function s:exPJ_GotoSelectResult(edit_cmd) " <<<
         return
     endif
 
-    let full_path_name = s:exPJ_GetPath(s:exPJ_cursor_line) . s:exPJ_GetName(s:exPJ_cursor_line)
+    "let full_path_name = s:exPJ_GetPath(s:exPJ_cursor_line) . s:exPJ_GetName(s:exPJ_cursor_line)
+    "changed by showgood: use absolute path because we may not be at the
+    "project home directory since that behavior is changed
+    let full_path_name = g:exES_CWD .'/'. s:exPJ_GetPath(s:exPJ_cursor_line) . s:exPJ_GetName(s:exPJ_cursor_line)
 
     silent call cursor(s:exPJ_cursor_line,s:exPJ_cursor_col)
 
