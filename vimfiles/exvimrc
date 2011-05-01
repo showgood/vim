@@ -17,7 +17,10 @@ if has ("unix")
 
     " NOTE: mac is unix like system, but to use gawk,id-utils correctly, we need to manually set the export path.  
     if has ("mac")
-        let $PATH='/usr/local/bin/:'.$PATH
+        "let $PATH='/usr/local/bin/:'.$PATH
+        let $EX_DEV=$HOME.'/exvim'
+        let $PATH='/opt/local/bin/:'.$PATH
+        let g:ex_toolkit_path = $HOME.'/exvim/toolkit'
     endif
 else " else if win32 or other system, just set the toolkit path.
     let $EX_DEV=$HOME.'/exvim'

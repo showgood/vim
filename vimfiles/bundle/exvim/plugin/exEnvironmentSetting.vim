@@ -129,6 +129,7 @@ function s:exES_WriteDefaultTemplate() " <<<
     silent call add(_list, '')
 
     silent call add(_list, 'LookupFileTag=./'._dir_name.'/filenametags')
+    "silent call add(_list, 'LookupFileTag='._cwd.'/'._dir_name.'/filenametags')
 
 	" Init the visual_studio plugin file path
     silent call add(_list, '')

@@ -54,7 +54,7 @@ nmap <Leader>f :LookupFile<CR>
 nmap <Leader>bx :EXB<CR>
 
 nmap <Leader>lp `[v`]
-set gfn=Monaco:h10
+set gfn=Monaco:h12
 set clipboard=unnamed
 set thesaurus+=$HOME/vimfiles/thesaur.txt
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [ASCII=\%3.3b]\ [HEX=\%02.2B]\ [POS=%4l,%4v]\ [%p%%]\ [LEN=%L]
