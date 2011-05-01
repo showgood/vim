@@ -122,3 +122,8 @@ map <leader>o :BufExplorer<cr>
 map <F3> :ExpjSelectToggle<cr>
 nnoremap <unique> <leader>ms :ExmbToggle<CR>
 nnoremap <unique> <Leader>qf :ExqfSelectToggle<CR>
+
+"settings for vimwiki
+let g:vimwiki_list = [{'path': $HOME.'/vim/vimwiki',  
+  \ 'path_html': $HOME.'/vim/vimwiki_html',
+  \ 'diary_link_count': 5}]

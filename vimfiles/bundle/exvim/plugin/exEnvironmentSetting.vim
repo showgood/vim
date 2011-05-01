@@ -105,15 +105,24 @@ function s:exES_WriteDefaultTemplate() " <<<
     silent call add(_list, '-- ex-plugins File Settings --')
     silent call add(_list, '')
     silent call add(_list, 'LangType=auto') " NOTE: null means depends on file_filter
-    silent call add(_list, 'Project=./'._dir_name.'/'.'project_tree.exproject')
-    silent call add(_list, 'FilenameList=./'._dir_name.'/filenamelist')
-    silent call add(_list, 'Tag=./'._dir_name.'/tags') " NOTE: if cpoptions+=d not set for each buffer, then the tags need full path or will not be able to find. so pls write 'au BufNewFile,BufEnter * set cpoptions+=d' in your rc
-    silent call add(_list, 'ID=./'._dir_name.'/ID')
-    silent call add(_list, 'Symbol=./'._dir_name.'/symbol')
-    silent call add(_list, 'Macro=./'._dir_name.'/macro')
-    silent call add(_list, 'Cscope=./'._dir_name.'/cscope.out')
-    silent call add(_list, 'Inherits=./'._dir_name.'/inherits')
-    silent call add(_list, 'Bookmarks=./'._dir_name.'/bookmarks')
+    "silent call add(_list, 'Project=./'._dir_name.'/'.'project_tree.exproject')
+    silent call add(_list, 'Project='._cwd.'/'._dir_name.'/'.'project_tree.exproject')
+    "silent call add(_list, 'FilenameList=./'._dir_name.'/filenamelist')
+    silent call add(_list, 'FilenameList='._cwd.'/'._dir_name.'/filenamelist')
+    "silent call add(_list, 'Tag=./'._dir_name.'/tags') " NOTE: if cpoptions+=d not set for each buffer, then the tags need full path or will not be able to find. so pls write 'au BufNewFile,BufEnter * set cpoptions+=d' in your rc
+    silent call add(_list, 'Tag='._cwd.'/'._dir_name.'/tags') " NOTE: if cpoptions+=d not set for each buffer, then the tags need full path or will not be able to find. so pls write 'au BufNewFile,BufEnter * set cpoptions+=d' in your rc
+    "silent call add(_list, 'ID=./'._dir_name.'/ID')
+    silent call add(_list, 'ID='._cwd.'/'._dir_name.'/ID')
+    "silent call add(_list, 'Symbol=./'._dir_name.'/symbol')
+    silent call add(_list, 'Symbol='._cwd.'/'._dir_name.'/symbol')
+    "silent call add(_list, 'Macro=./'._dir_name.'/macro')
+    silent call add(_list, 'Macro='._cwd.'./'._dir_name.'/macro')
+    "silent call add(_list, 'Cscope=./'._dir_name.'/cscope.out')
+    silent call add(_list, 'Cscope='._cwd.'/'._dir_name.'/cscope.out')
+    "silent call add(_list, 'Inherits=./'._dir_name.'/inherits')
+    silent call add(_list, 'Inherits='._cwd.'/'._dir_name.'/inherits')
+    "silent call add(_list, 'Bookmarks=./'._dir_name.'/bookmarks')
+    silent call add(_list, 'Bookmarks='._cwd.'/'._dir_name.'/bookmarks')
     silent call add(_list, '')
     silent call add(_list, 'vimentryRefs+=')
     silent call add(_list, '')
@@ -121,25 +130,30 @@ function s:exES_WriteDefaultTemplate() " <<<
     silent call add(_list, '')
     silent call add(_list, 'RestoreBuffers=false')
     silent call add(_list, 'AskForRestoration=true')
-    silent call add(_list, 'RestoreInfo=./'._dir_name.'/restore_info')
+    "silent call add(_list, 'RestoreInfo=./'._dir_name.'/restore_info')
+    silent call add(_list, 'RestoreInfo='._cwd.'/'._dir_name.'/restore_info')
 
 	" Init the LookupFile plugin file path
     silent call add(_list, '')
     silent call add(_list, '-- LookupFile Settings --')
     silent call add(_list, '')
 
-    silent call add(_list, 'LookupFileTag=./'._dir_name.'/filenametags')
-    "silent call add(_list, 'LookupFileTag='._cwd.'/'._dir_name.'/filenametags')
+    "silent call add(_list, 'LookupFileTag=./'._dir_name.'/filenametags')
+    silent call add(_list, 'LookupFileTag='._cwd.'/'._dir_name.'/filenametags')
 
 	" Init the visual_studio plugin file path
     silent call add(_list, '')
     silent call add(_list, '-- Visual Studio Settings --')
     silent call add(_list, '')
 
-    silent call add(_list, 'vsTaskList=./'._dir_name.'/vs_task_list')
-    silent call add(_list, 'vsOutput=./'._dir_name.'/vs_output')
-    silent call add(_list, 'vsFindResult1=./'._dir_name.'/vs_find_results_1')
-    silent call add(_list, 'vsFindResult2=./'._dir_name.'/vs_find_results_2')
+    "silent call add(_list, 'vsTaskList=./'._dir_name.'/vs_task_list')
+    "silent call add(_list, 'vsOutput=./'._dir_name.'/vs_output')
+    "silent call add(_list, 'vsFindResult1=./'._dir_name.'/vs_find_results_1')
+    "silent call add(_list, 'vsFindResult2=./'._dir_name.'/vs_find_results_2')
+    silent call add(_list, 'vsTaskList='._cwd.'/'._dir_name.'/vs_task_list')
+    silent call add(_list, 'vsOutput='._cwd.'/'._dir_name.'/vs_output')
+    silent call add(_list, 'vsFindResult1='._cwd.'/'._dir_name.'/vs_find_results_1')
+    silent call add(_list, 'vsFindResult2='._cwd.'/'._dir_name.'/vs_find_results_2')
 
 	" TODO: use list for souliton results, and apply this list in
 	" visual_studio plugin search

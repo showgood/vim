@@ -517,8 +517,8 @@ function s:exPJ_CreateProject(with_dialog) " <<<
     " save filenametag list
     if exists( 'g:exES_LookupFileTag' )
         echon "sorting filenametags... \r"
-        silent call writefile( sort(filename_list), simplify(g:exES_CWD.'/'.g:exES_LookupFileTag))
-        "silent call writefile( sort(filename_list), simplify(g:exES_LookupFileTag))
+        "silent call writefile( sort(filename_list), simplify(g:exES_CWD.'/'.g:exES_LookupFileTag))
+        silent call writefile( sort(filename_list), simplify(g:exES_LookupFileTag))
         echon "save as " . g:exES_LookupFileTag . " \r"
     endif
 
