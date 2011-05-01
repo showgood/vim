@@ -1,6 +1,10 @@
 <Question> how to list all plugins and _vimrcs loaded?
 <Answer> :scriptnames
 
+<Question> how to capture the ex command output in vim?
+<Answer> :redir @a, then execute command. register a will have the output
+<related> :h redir
+
 <Question> how to paste the lines with right indent?
 <Answer> ]p
 
