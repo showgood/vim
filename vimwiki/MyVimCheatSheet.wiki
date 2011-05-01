@@ -1,0 +1,39 @@
+=configuration=
+==set in vimrc==
+F2: toggle Nerd tree window
+F3: toggle exProject window
+
+==set by exvim==
+F4: toggle Taglist window
+F8: clear search pattern
+F9:  Insert/Remove macro extend ("\") after all the lines of the selection
+F12: Insert '#if 0' and '#endif' between the selection
+
+=exVim=
+<leader>ms  --- toggle exvim mark browser window
+<leader>qf  --- toggle exvim quickfix window
+<leader>bx  --- open exvim buffer explorer window
+
+<leader>ss: open symbol select window
+<leader>sg: get the matched symbols by the word under the cursor
+<leader>tt: open jump stack window
+ \]: to get the tag information of the word under the cursor
+ 
+ :GS <word>  --- search word in ID database
+ :GSW <word> --- search the whole word in ID database
+ 
+get prev/next search results in global search by "u" or "ctrl-r"
+
+alt + 0 --- clear highlight
+alt 1/2/3/4  --- highlight
+
+ctrl + down --- Jump to next error in select/quickview window.
+ctrl + up --- Jump to previous error in select/quickview window.
+
+=my mapping=
+<leader>ev --- open vimrc
+<leader>f  --- open LookupFile window
+<leader>lp  --- reselect last paste
+<ldeader>W  --- strip all trailing whitespace in the current file
+<leader>w   --- split the window vertically
+<leader><space> --- clear the highlight for previous search

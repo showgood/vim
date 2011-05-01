@@ -1,0 +1,8 @@
+create a branch: git branch <branch name>
+display all the branches: git branch
+check out the branch: git checkout <branch name>
+display the remote branches: git branch -r
+
+stage files to be committed: git add <file>
+git commit -a: automatically stage files that have been modified and deleted, but new files you have not told git about are not affected
+

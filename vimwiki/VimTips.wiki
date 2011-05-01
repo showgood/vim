@@ -1,0 +1,233 @@
+<Question> how to list all plugins and _vimrcs loaded?
+<Answer> :scriptnames
+
+<Question> how to paste the lines with right indent?
+<Answer> ]p
+
+<Question> how to sort within vim? (without using external sort program)
+<Answer> :sort
+<related> :h sort
+
+<Question> how to sort reversely within vim?
+<Answer> :sort!
+<related> :h sort
+
+<Question> how to sort and remove the duplication during sort?
+<Answer> :sort u
+<related> :h sort
+
+<Question> how to reselect the last paste?
+<Answer> `[v`]
+<related> :h `[ :h `]
+
+<Question> how to diff files within vim?
+<Answer> :vert splitdiff <file>
+<Note> this will split the screen vertically
+
+<Question> how to split a buffer vertically? (sb<N> only split it horizontally)?
+<Answer> :vert sb<N>
+
+<Question> how to switch to normal mode when in insert mode?
+<Answer> <CTRL-o>
+
+<Question> how to open a file and go to a given line with vim quickly?
+<Answer> vim +<line number> <file to open>
+<example> vim +99 test.txt  will open test.txt and go to line 99
+
+<Question> how to highlight lines longer than 80 columns?
+<Answer> :match ErrorMsg '\%>80v.\+'
+
+<Question>how to open the gui font selection dialog?
+<Answer> :set gfn=*
+
+<Question> what's the purpose of Numbered registers "0 to "9?
+<Answer> Vim fills these registers with text from yank and delete commands.
+<example> "2p will paste the content in register "2
+
+<Question> how to set the format of status line?
+<Answer> :set statusline <format>
+<example> set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+<related> :h statusline
+
+<Question> how to show the statusline?
+<Answer> :set laststatus=2
+<Note> by default, statusline is hidden
+
+<Question> how to hide the statusline?
+<Answer> :set laststatus=0
+
+<Question> how to paste the content of a register in insert or command mode?
+<Answer> <CTRL-r> followed by register name (use " for unnamed register)
+
+<Question> how to paste the word under the cursor into the command line?
+<Answer> <CTRL-r><CTRL-w> to paste the word under the cursor into the command line
+
+<Question> How to count the number of occurences of a word in a file?
+<Answer> :%s/<word>//gn
+
+<Question> how to search a pattern in the files in the current directory and its subdirectories?
+<Answer> :vimgrep pattern **/*.txt
+
+<Question> how to search a pattern in the files ONLY in the current directory (not include its subdirectories)?
+<Answer> :vimgrep pattern *.txt
+
+<Question> how to explicitly specify the syntax for a file?
+<Answer> :set ft=cpp
+
+<Question> How to insert the current file name?
+<Answer> "%p
+
+<Question> How to reselect the previous visual area (ULTRA)?
+<Answer> gv
+
+<Question> how to  do some  normal mode commands after search?
+<Answer> :g/a/norm  xxxxx
+<example> find the lines has word abc, then add a line "aaa" above  it:  :g/abc/norm  Oaaa
+<Note> keyword norm, xxxx  means the normal commands you want to do
+
+<Question> how to shows lines containing the word under the cursor?
+<Answer> [I (that's bracket-open, capital-i) 
+
+<Question> how to trace your movements backwards in a file?
+<Answer> <CTRL-o>
+
+<Question> how to trace your movements forwards in a file?
+<Answer> <CTRL-i>
+
+<Question> how to jump to last modified line?
+<Answer> '.
+
+<Question> how to jumps to exact position of last modification?
+<Answer> `.
+
+<Question> how to open the last modified file?
+<Answer> '0
+
+<Question>  how to change to the directory of the current file?
+<Answer> :lcd %:p:h
+
+:set autochdir instead of :lcd %:p:h in your vimrc to change directories upon opening a file
+
+<Question> how to increment the number under the cursor?
+<Answer> Ctrl-a
+
+<Question> how to decrement the number under the cursor?
+<Answer> Ctrl-x
+
+Use '\v' in your regex to set the mode to 'very magic', and avoid confusion. (:h \v for more info.)
+
+<Question> how to yank the text inside () block?
+<Answer> yi(
+
+<Question> how to delete the text inside () block?
+<Answer> di(
+
+<Question> how to change the text inside () block?
+<Answer> ci(
+<Note> above three tips also works for {}, [], <>, "" block
+
+<Question> how to create global marks?
+<Answer> using m<capital character>, for example: mP
+
+<Question> how to substitute with an expression?
+<Answer> use "\=".  When the substitute string starts with "\=" the remainder is interpreted as an expression.
+<example> %s/^/\=line(".")." "/
+this command will put line no in front of each line
+<related> :h sub-replace-expression
+
+<Question> how to format a block of code inside {}?
+<Answer>
+a. put cursor at beginning {
+b. v% to select the block
+c. press = to indent 
+<related> :h =
+
+<Question> how to select a word quickly? (when the cursor is in the middle of word)?
+<Answer> viw
+ 
+<Question> how to chnage a word quickly?(for eg, replace the word under cursor with the word in the clipboard?
+<Answer> diwP (but it only work once!!!)
+ 
+<Question> how to change the default font for gvim?
+<Answer>
+a. launch a gvim, use menu->select font to select the font you want
+b. type "set gfn?" command in ex mode
+c. copy the font name and size returned by gvim
+d. edit the .gvimrc file, add a line: set gfn=<font name and size returned by gvim>, use \ before the space
+<Note> on MacVim, it's set gfn=<font name>:h<font size>
+<example> set gfn=Monaco:h12
+ 
+<Question> how to select multiple lines quickly? (i.e does visual mode support count?)
+<Answer>
+Vx   :   x means x lines, don't include the current selected line
+ 
+<Question> how to move cursor up/down multiple lines quickly?
+<Answer>  x k/j                 x means move up/down x lines
+ 
+<Question> what's the function of set sw=3 ?
+<Answer> sw means shift width, after set sw=3, you do a >> on a line, the line will right shift 3 spaces
+also << will left shift, if you're in select mode, just > will do the same thing
+ 
+<Question> what's the function of set ai ?
+<Answer> ai means autoindent, in edit mode, after you press enter, the cursor will be placed with the same
+indent as previous line
+ 
+<Question> what's the role of set expandtab ?
+<Answer> expandtab means expand the tab with space, this option will replace all the tab with spaces
+ 
+11. when edit makefile, please "set noexpandtab", otherwise make can't recognize the commands part
+ 
+<Question> how to copy something into a named buffer?  (y/yy usually put them into a unamed buffer)
+<Answer> use command: "xyy  , this will put them into a buffer named x
+for paste from buffer, just use: "xp    x means the buffer name
+ 
+<Question> how to continue search when use the command "fx" in a line?
+<Answer> use ; continue search in the same direction, use , continue search in opposite direction
+ 
+<Question> how to let vim save the abbreviations forever?
+<Answer> put those abbrs in the .vimrc file
+ 
+<Question> how to change the vim window size quickly?
+<Answer> z <n> <enter>   n means the new height size
+<Answer> :res(ize) <n> <enter>
+ 
+<Question> how to use a command to open the printer dialog quickly?
+<Answer> :hardcopy
+ 
+<Question> how to minimize gvim quickly?
+<Answer> :st
+<Note> not working on MacVim
+ 
+<Question> how to jump to the begin(ie. {) of the function when cursor is inside the some place inthe function?
+<Answer> [[
+ 
+<Question> how to jump to the end(ie. }) of the function when cursor is inside the some place inthe function?
+<Answer> ][
+ 
+<Question> how to jump to the begin(ie. }) of the next function when cursor is inside the some place inthe function?
+<Answer> ]]
+ 
+<Question> how to jump to the end(ie. }) of the next function when cursor is inside the some place inthe function?
+<Answer> []
+ 
+set textwidth=75  
+set formatoptions=roncaqwt
+set fo-=t for code
+ 
+ 
+set printoptions
+ 
+<Question> How to make vim always use english menu instead of chinese one
+<Answer> put those lines in your vimrc
+   set langmenu=en
+   source $VIMRUNTIME/delmenu.vim
+   source $VIMRUNTIME/menu.vim
+ 
+<Question> How to make vim use the english prompt message
+<Answer> put this line in your vimrc
+    language messages en
+ 
+so language messages zh_CN.utf-8 will make vim display message in chinese
+ 
+Avoid an insert-mode abbreviation by pressing Ctrl-V (or Ctrl-Q if you use Ctrl-V for paste) before the character after the abbreviation. :help abbreviations
+
