@@ -1,6 +1,12 @@
 <Question> how to list all plugins and _vimrcs loaded?
 <Answer> :scriptnames
 
+<Question> how to make all the split windows size equal?
+<Answer> Ctrl-w =
+
+<Question> how to replace all the existing tabs in the file with spaces specified by tabstop option?
+<Answer> :retab
+
 <Question> how to capture the ex command output in vim?
 <Answer> :redir @a, then execute command. register a will have the output
 <related> :h redir
